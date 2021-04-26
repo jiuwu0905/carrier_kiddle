@@ -1,0 +1,297 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.huawei.agconnect'
+apply plugin: "org.sonarqube"
+
+
+def enableSeparateBuildPerCPUArchitecture = false
+
+def enableProguardInReleaseBuilds = false
+
+project.ext.react = [
+        enableHermes: false,  // clean and rebuild if changing
+]
+
+//apply from: "../RNLibs/node_modules/react-native/react.gradle"
+
+def getCurrentDateText() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+def jscFlavor = 'org.webkit:android-jsc:+'
+
+/**
+ * Whether to enable the Hermes VM.
+ *
+ * This should be set on project.ext.react and mirrored here.  If it is not set
+ * on project.ext.react, JavaScript will not be compiled to Hermes Bytecode
+ * and the benefits of using Hermes will therefore be sharply reduced.
+ */
+def enableHermes = false // project.ext.react.get("enableHermes", false)
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    defaultConfig {
+        applicationId rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        // 正式包不用添加日期
+        versionName rootProject.ext.versionName  + "-" + getCurrentDateText()
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+//        ndk {
+//            abiFilters 'armeabi', 'armeabi-v7a', 'x86'
+//        }
+        multiDexEnabled true
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+        resConfigs "en", "zh-rCN","es","fr","it"
+    }
+    splits {
+        abi {
+            reset()
+            enable enableSeparateBuildPerCPUArchitecture
+            universalApk false  // If true, also generate a universal APK
+            include "armeabi-v7a"
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
+
+            ndk {
+                abiFilters  "arm64-v8a", "armeabi-v7a"
+            }
+        }
+        debug {
+            minifyEnabled false
+            ndk {
+                abiFilters  "arm64-v8a", "armeabi-v7a"//'armeabi-v7a', 'x86'//'armeabi',
+            }
+
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+    compileOptions {
+        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    flavorDimensions 'Market'
+    productFlavors {
+        cnTest {
+            dimension = 'Market'
+        }
+        cnProd {
+            dimension = 'Market'
+        }
+//        US { dimension = 'Market' }
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            // For each separate APK per architecture, set a unique version code as described here:
+            // http://tools.android.com/tech-docs/new-build-system/user-guide/apk-splits
+            def versionCodes = ["armeabi-v7a": 1]
+            def abi = output.getFilter(com.android.build.OutputFile.ABI)
+            if (abi != null) {  // null for the universal-debug, universal-release variants
+                output.versionCodeOverride =
+                        versionCodes.get(abi) * 1048576 + defaultConfig.versionCode
+            }
+
+            StringBuffer sb = new StringBuffer()
+            sb.append(defaultConfig.applicationId)
+            sb.append("_")
+            sb.append(defaultConfig.versionName)
+            sb.append("_")
+            sb.append(defaultConfig.versionCode)
+            sb.append("_")
+            for (int i = 0; i < productFlavors.size(); i++) {
+                sb.append(productFlavors[i].name)
+                sb.append("_")
+            }
+            sb.append(buildType.name)
+            sb.append("_")
+            sb.append(getCurrentDateText())
+            sb.append(".apk")
+            output.outputFileName = sb.toString()
+        }
+    }
+    //所有报错误的 .so都选择第一个
+    packagingOptions {
+        pickFirst 'lib/armeabi/libc++_shared.so'
+        pickFirst 'lib/x86/libc++_shared.so'
+        pickFirst 'lib/armeabi-v7a/libc++_shared.so'
+        pickFirst 'lib/arm64-v8a/libc++_shared.so'
+    }
+}
+
+
+
+
+// 字体图标
+project.ext.vectoricons = [
+        iconFontNames: ['MaterialIcons.ttf', 'EvilIcons.ttf', 'iconfont.ttf']
+]
+apply from: "./../RNLibs/node_modules/react-native-vector-icons/fonts.gradle"
+
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.2.2'
+    implementation 'androidx.navigation:navigation-ui:2.2.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
+    implementation 'androidx.core:core:1.2.0'
+    implementation 'androidx.core:core-animation:1.0.0-alpha01'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha03'
+    implementation 'com.google.android.material:material:1.2.0-alpha06'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.13'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    // 侧滑删除控件
+    implementation 'com.github.mcxtzhang:SwipeDelMenuLayout:V1.3.0'
+    //下拉刷新控件
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
+    implementation 'com.github.promeg:tinypinyin:2.0.3'
+
+    // zxing
+    implementation 'cn.bingoogolapple:bga-qrcode-zxing:1.3.7'
+    implementation 'cn.bingoogolapple:bga-qrcode-zbar:1.3.7'
+    implementation 'cn.bingoogolapple:bga-banner:2.2.5@aar'
+
+    implementation 'com.blankj:utilcodex:1.25.9'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+
+    // 屏幕适配
+    implementation 'me.jessyan:autosize:1.2.1'
+
+
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation rootProject.ext.gson
+
+    //涂鸦SDK
+    implementation 'com.alibaba:fastjson:1.1.67.android'
+    implementation 'com.squareup.okhttp3:okhttp-urlconnection:3.12.3'
+    implementation 'com.tuya.smart:tuyasmart:3.17.8'
+    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
+
+    // *********** argracesdk ***********
+    // argracesdk：开始！
+//    implementation project(':argracesdk')
+//    implementation project(':kiddleSdk')
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation("com.squareup.okhttp3:logging-interceptor:4.2.1")
+    implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
+
+    implementation 'com.alibaba:arouter-api:1.5.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+
+    implementation 'com.liulishuo.okdownload:okdownload:1.0.7'
+    implementation ('com.liulishuo.okdownload:okhttp:1.0.7') {
+        exclude group: 'com.squareup.okhttp3'
+    }
+
+    implementation 'at.blogc:expandabletextview:1.0.5'
+    implementation 'com.beloo.widget:ChipsLayoutManager:0.3.7@aar'
+
+    implementation 'com.github.0xZhangKe:WebSocketDemo:3.1'
+    implementation 'com.aliyun.dpa:oss-android-sdk:2.9.4'
+
+
+    implementation 'com.aliyun.ams:alicloud-android-push:3.2.5'
+
+//华为依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-huawei:3.2.5'
+//小米依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-xiaomi:3.2.5'
+//OPPO依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-oppo:3.2.5'
+//vivo依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-vivo:3.2.5'
+//魅族依赖
+    implementation 'com.aliyun.ams:alicloud-android-third-push-meizu:3.2.5'
+
+
+
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.6'
+
+
+
+
+
+    // *********** RN环境 ***********
+    // RN环境：开始！
+    implementation "com.facebook.react:react-native:+"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    // 支持GIF动图
+    implementation 'com.facebook.fresco:animated-gif:2.0.0'
+    implementation project(':lottie-react-native')
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-linear-gradient')
+    implementation project(':react-native-svg')
+    implementation project(':react-native-vector-icons')
+    implementation project(':@react-native-community_masked-view')
+    implementation project(':react-native-reanimated')
+    implementation project(':react-native-safe-area-context')
+    implementation project(':react-native-screens')
+    implementation project(':react-native-community-netinfo')
+    implementation project(':react-native-webview')
+    implementation project(':rnPicker')
+
+    if (enableHermes) {
+        def hermesPath = "../RNLibs/node_modules/hermes-engine/android/";
+        debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseImplementation files(hermesPath + "hermes-release.aar")
+    } else {
+        implementation jscFlavor
+    }
+
+
+    // *********** 海外版本 ***********
+    // 海外版本：开始！
+    // 谷歌GCM推送
+//    USImplementation('com.google.firebase:firebase-messaging:20.1.5')
+
+    // 海外版本：结束！
+
+
+}

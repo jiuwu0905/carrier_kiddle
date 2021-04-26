@@ -1,0 +1,236 @@
+[
+  {
+    "name": "mesh_group",
+    "中文": "群组",
+    "英文": "Group",
+    "西班牙": "Grupo",
+    "意大利": "Gruppo",
+    "德语": "Gruppe",
+    "法语": "Groupe "
+  },
+  {
+    "name": "create_group",
+    "中文": "创建群组",
+    "英文": "Create a group",
+    "西班牙": "Crear un grupo",
+    "意大利": "Crea il gruppo",
+    "德语": "Gruppenerstellen",
+    "法语": "Créer un groupe "
+  },
+  {
+    "name": "create_manual_scene_title",
+    "中文": "手动一键控制多个设备",
+    "英文": "Control multiple devices with one tap",
+    "西班牙": "Controlar manualmente varios dispositivos con un botón",
+    "意大利": "Controlla dei dispositivi con un pulsante a mano",
+    "德语": "Steuern mehrere Geräte manuell mit einem Schlüssel",
+    "法语": "Contrôler manuellement à une touche plusieurs appareils "
+  },
+  {
+    "name": "create_auto_scene_title",
+    "中文": "启用后，触发条件将自动执行智能任务",
+    "英文": "When enable, the smart task will be executed automatically when the conditions is triggered.",
+    "西班牙": "Al haber activado, las condiciones de activar ejecutarán automáticamente las tareas inteligentes",
+    "意大利": "Dopo l'accensione, quando si soddisfa la condizione di attivazione, si esegui automaticamente i compiti intelligenti",
+    "德语": "Wenn aktiviert, wird Auslöser-Bedingung automatisch intelligente Aufgaben ausführen",
+    "法语": "Après activation, les conditions de déclenchement exécutent automatiquement les tâches intelligentes "
+  },
+  {
+    "name": "empty_mesh_group_title",
+    "中文": "群组内无设备",
+    "英文": "No device in the group",
+    "西班牙": "No hay dispositivos en el grupo",
+    "意大利": "Nessun dispositivo nel gruppo",
+    "德语": "Keine Geräte in der Gruppe",
+    "法语": "Aucun appareil dans le groupe "
+  },
+  {
+    "name": "manager_mesh_group",
+    "中文": "管理群组",
+    "英文": "Manage the group",
+    "西班牙": "Gestionar los grupos",
+    "意大利": "Gestione del gruppo",
+    "德语": "Gruppenmanagement",
+    "法语": "Gérer le groupe "
+  },
+  {
+    "name": "remove_mesh_group",
+    "中文": "解散群组",
+    "英文": "Ungroup",
+    "西班牙": "Disolver el grupo",
+    "意大利": "Sciogli il gruppo",
+    "德语": "Gruppelöschen",
+    "法语": "Dissoudre le groupe"
+  },
+  {
+    "name": "no_mesh_group",
+    "中文": "暂无群组",
+    "英文": "No group yet",
+    "西班牙": "No hay grupos",
+    "意大利": "Nessun gruppo adesso",
+    "德语": "Keine Gruppen",
+    "法语": "Aucun groupe "
+  },
+  {
+    "name": "scene_no_mesh_gateway",
+    "中文": "您还未添加蓝牙mesh网关，蓝牙mesh设备将无法远程控制执行",
+    "英文": "You haven't added the Bluetooth mesh gateway, and the Bluetooth mesh cannot be controlled remotely.",
+    "西班牙": "Aún no ha añadido la puerta de enlace mesh de Bluetooth por lo que el dispositivo con mesh Bluetooth no se ejecutará",
+    "意大利": "Nessun gateway mesh Bluetooth aggiunto, la mesh Bluetooth non verrà eseguita",
+    "德语": "Ohne Hinzufügen eines Bluetooth-Mesh-Gateways wird das Bluetooth-Mesh nicht ausgeführt",
+    "法语": "Vous n'avez pas ajouté de passerelle mesh Bluetooth, le mesh Bluetooth n'exécutera pas "
+  },
+  {
+    "name": "country_item_selected",
+    "中文": "当前",
+    "英文": "Currently",
+    "西班牙": "Presente",
+    "意大利": "Attuale",
+    "德语": "Aktuell",
+    "法语": "Actuel "
+  },
+  {
+    "name": "connecting_device_success",
+    "中文": "连接设备成功",
+    "英文": "Device connected successfully ",
+    "西班牙": "Se ha conectado el dispositivo",
+    "意大利": "Connessione del dispositivo con successo",
+    "德语": "Gerät erfolgreich verbinden",
+    "法语": "Connexion de l'appareil avec succès "
+  },
+  {
+    "name": "connecting_device_failure",
+    "中文": "连接设备失败",
+    "英文": "Failed to connect the device",
+    "西班牙": "No conseguir conectar el dispositivo",
+    "意大利": "Connessione del dispositivo fallita",
+    "德语": "Fehler bei der Gerätverbindung",
+    "法语": "Échec de la connexion de l'appareil"
+  },
+  {
+    "name": "music_list_title",
+    "中文": "音乐列表",
+    "英文": "Music List",
+    "西班牙": "Lista de música",
+    "意大利": "Lista della musica",
+    "德语": "Musikliste",
+    "法语": "Liste de musique "
+  },
+  {
+    "name": "device_found_count",
+    "中文": "发现5 个待添加蓝牙设备，去添加",
+    "英文": "Found 5 Bluetooth devices, add now?",
+    "西班牙": "Se ha encontrado 5 dispositivos de Bluetooth pendientes de añadir, añadirlos",
+    "意大利": "5 dispositivi Bluetooth da aggiungere trovati, vai a aggiungere",
+    "德语": "5 hinzuzufügende Bluetooth-Geräte gefunden, bitte hinzufügen",
+    "法语": "5 appareils Bluetooth à ajouter ont été trouvés, aller à ajouter "
+  },
+  {
+    "name": "provision_success_count",
+    "中文": "添加成功5个设备",
+    "英文": "5 devices added successfully ",
+    "西班牙": "Se ha añadido 5 dispositivos",
+    "意大利": "Aggiunta di 5 dispositivi con successo",
+    "德语": "Erfolgreiches Hinzufügen der 5 Geräte,",
+    "法语": "Ajout de 5 appareils avec succès "
+  },
+  {
+    "name": "provision_failed_count",
+    "中文": "添加失败5个设备",
+    "英文": "Failed to add 5 devices",
+    "西班牙": "No conseguir añadir 5 dispositivos",
+    "意大利": "Aggiunti di 5 dispositivi fallita",
+    "德语": "Erfolgreiches Hinzufügen der 5 Geräte",
+    "法语": "Échec de l'ajout de 5 appareils"
+  },
+  {
+    "name": "provisioning_tip",
+    "中文": "1/5个设备添加成功, \\n请耐心等待",
+    "英文": "1/5 devices added successfully, \\n  please wait…",
+    "西班牙": "Se ha añadido 1/5 dispositivos, \\n espere, por favor",
+    "意大利": "1/5 dispositivi sono stati aggiunti con successo, \\n attendi per favore",
+    "德语": "1/5 Geräte wurden erfolgreich hinzugefügt, \\nbitte warten",
+    "法语": "Ajout de l'appareil 1/5 avec succès, veuillez attendez patiemment  \\n"
+  },
+  {
+    "name": "scan_ble_device",
+    "中文": "扫描附近设备中",
+    "英文": "Searching for the devices nearby",
+    "西班牙": "Escaneando los dispositivos cercanos",
+    "意大利": "Cerca i dispositivi vicini",
+    "德语": "Scannen von Geräten in der Nähe",
+    "法语": "En cours de scanner les appareils voisins "
+  },
+  {
+    "name": "scan_ble_device_not_find",
+    "中文": "未扫描到蓝牙设备",
+    "英文": "Bluetooth device not found\n",
+    "西班牙": "No se ha encontrado dispositivos de Bluetooth",
+    "意大利": "Nessun dispositivo Bluetooth cercato",
+    "德语": "Bluetooth-Gerät nicht gescannt",
+    "法语": "Aucun appareil Bluetooth scanné "
+  },
+  {
+    "name": "rescan",
+    "中文": "重新扫描",
+    "英文": "Re-searching",
+    "西班牙": "Escanear de nuevo",
+    "意大利": "Cerca di nuovo",
+    "德语": "Erneut scannen",
+    "法语": "Scanner à nouveau "
+  },
+  {
+    "name": "open_ble",
+    "中文": "请开启蓝牙",
+    "英文": "Please turn on the Bluetooth",
+    "西班牙": "Activar Bluetooth",
+    "意大利": "Attiva il Bluetooth",
+    "德语": "Bluetooth einschalten",
+    "法语": "Veuillez activer Bluetooth "
+  },
+  {
+    "name": "ble_tips",
+    "中文": "请打开“设置-蓝牙”或从屏幕底端上划打开蓝牙，允许使用蓝牙搜索设备",
+    "英文": "Please go to \"Settings - Bluetooth\" or swipe up from the bottom of the screen to turn on the Bluetooth to allow searching for devices with Bluethooth",
+    "西班牙": "Abrir \"Ajustes - Bluetooth\" o activar Bluetooth deslizando el dedo desde la parte inferior de la pantalla hacia arriba, permitiendo que Bluetooth busque los dispositivos.",
+    "意大利": "Apri \"Impostazioni-Bluetooth\" o attiva il Bluetooth scorrendo verso l'alto dalla parte inferiore dello schermo per lasciare il Bluetooth cercare i dispositivi",
+    "德语": "Aktivieren „Einstellungen-Bluetooth“oder Bluetooth am unteren Bildschirmrand, suchen über Bluetooth nach Geräten",
+    "法语": "Veuillez activer «paramètres - Bluetooth» ou faire glisser depuis le bas de l'écran pour activer Bluetooth, afin de permettre la recherche de l'appareil par Bluetooth"
+  },
+  {
+    "name": "ble_tips_2",
+    "中文": "当前手机蓝牙关闭，是否打开以扫描蓝牙设备?",
+    "英文": "The Bluetooth is off, turn it on to search for Bluetooth devices.",
+    "西班牙": "El Bluetooth del móvil actual está apagado, ¿quiere activarlo para que busque los dispositivos Bluetooth?",
+    "意大利": "Il Bluetooth è spento, conferma di attivarlo per cercare i dispositivi Bluetooth?",
+    "德语": "Bluetooth des Mobiltelefons ist ausgeschaltet. Bluetooth einschalten?",
+    "法语": "Bluetooth du téléphone est actuellement éteint, voulez-vous l'activer pour scanner l'appareil Bluetooth ? "
+  },
+  {
+    "name": "action_select_all",
+    "中文": "全选",
+    "英文": "Select All",
+    "西班牙": "Seleccionar todo",
+    "意大利": "Seleziona tutto",
+    "德语": "Alle wählen",
+    "法语": "Tout sélectionner "
+  },
+  {
+    "name": "action_cancel_all",
+    "中文": "取消全选",
+    "英文": "Unselect All",
+    "西班牙": "Cancelar seleccionar todo",
+    "意大利": "Deseleziona tutto",
+    "德语": "Alle aufheben",
+    "法语": "Tout déselectionner "
+  },
+  {
+    "name": "ble_device_config_all",
+    "中文": "批量配网",
+    "英文": "Bind Devices in Batch",
+    "西班牙": "Distribución de red en lote",
+    "意大利": "Distribuzione di rete in lotti",
+    "德语": "Chargen-Netzwerkkonfiguration",
+    "法语": "Réseau de distribution par lot"
+  }
+]

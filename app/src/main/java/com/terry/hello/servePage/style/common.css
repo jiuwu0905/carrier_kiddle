@@ -1,0 +1,282 @@
+body,div, h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+    padding: 0;
+}
+.line20 {
+    height: 20px;
+    background: #F7F7F7;
+}
+.content {
+    padding: 20px;
+}
+.content .content-item {
+    margin-bottom: 30px;
+}
+.content .content-item h4 {
+    color: #333333;
+    font-size: 15px;
+    margin-bottom: 10px;
+    font-weight:400;
+}
+.content .content-item p {
+    color: #999999;
+    font-size: 13px;
+    line-height:21px;
+}
+.content .content-item p a {
+    text-decoration: underline;
+    color: #7383A2;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 14px;
+    font-weight:500;
+}
+.title .left-line {
+    flex: 1;
+    height: 1px;
+    background: #EBEBEB;
+}
+.title .right-line {
+    flex: 1;
+    height: 1px;
+    background: #EBEBEB;
+}
+.content2 {
+    padding: 0 20px;
+}
+.content2 .content-item {
+    margin-bottom: 24px;
+}
+.content2 .content-item h4 {
+    color: #2D2D2D;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight:400;
+}
+.content2 .content-item p {
+    color: #737373;
+    font-size: 14px;
+    font-weight:400;
+    line-height:21px;
+}
+.content2 .content-item i {
+    display: block;
+    height: 212px;
+    margin-top: 15px;
+}
+    /*'zh-CN': 简体中文； 
+    ‘zh-TW’： 繁体中文； 
+    ‘en’: 英语； 
+    ‘es’: 西班牙语；
+    ‘it’: 意大利语；
+    ‘de’: 德文；
+    ‘fr’: 法语 */
+
+
+.question4-1 {
+    background: url(../images/question4-1-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-1.zh-CN {
+    background: url(../images/question4-1-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-1.zh-TW {
+    background: url(../images/question4-1-zh-TW.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-1.en {
+    background: url(../images/question4-1-en.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-1.es {
+    background: url(../images/question4-1-es.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-1.it {
+    background: url(../images/question4-1-it.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-1.de {
+    background: url(../images/question4-1-de.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-1.fr {
+    background: url(../images/question4-1-fr.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+
+.question4-2 {
+    background: url(../images/question4-2-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-2.zh-CN {
+    background: url(../images/question4-2-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-2.zh-TW {
+    background: url(../images/question4-2-zh-TW.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-2.en {
+    background: url(../images/question4-2-en.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-2.es {
+    background: url(../images/question4-2-es.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-2.it {
+    background: url(../images/question4-2-it.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-2.de {
+    background: url(../images/question4-2-de.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question4-2.fr {
+    background: url(../images/question4-2-fr.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.question6-1 {
+    background: url(../images/question6-1-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-1.zh-CN {
+    background: url(../images/question6-1-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-1.zh-TW {
+    background: url(../images/question6-1-zh-TW.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-1.en {
+    background: url(../images/question6-1-en.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-1.es {
+    background: url(../images/question6-1-es.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-1.it {
+    background: url(../images/question6-1-it.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-1.de {
+    background: url(../images/question6-1-de.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-1.fr {
+    background: url(../images/question6-1-fr.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.question6-2 {
+    background: url(../images/question6-2-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-2.zh-CN {
+    background: url(../images/question6-2-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-2.zh-TW {
+    background: url(../images/question6-2-zh-TW.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-2.en {
+    background: url(../images/question6-2-en.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-2.es {
+    background: url(../images/question6-2-es.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-2.it {
+    background: url(../images/question6-2-it.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-2.de {
+    background: url(../images/question6-2-de.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question6-2.fr {
+    background: url(../images/question6-2-fr.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.question7-1 {
+    background: url(../images/question7-1-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-1.zh-CN {
+    background: url(../images/question7-1-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-1.zh-TW {
+    background: url(../images/question7-1-zh-TW.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-1.en {
+    background: url(../images/question7-1-en.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-1.es {
+    background: url(../images/question7-1-es.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-1.it {
+    background: url(../images/question7-1-it.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-1.de {
+    background: url(../images/question7-1-de.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-1.fr {
+    background: url(../images/question7-1-fr.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+.question7-2 {
+    background: url(../images/question7-2-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-2.zh-CN {
+    background: url(../images/question7-2-zh-CN.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-2.zh-TW {
+    background: url(../images/question7-2-zh-TW.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-2.en {
+    background: url(../images/question7-2-en.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-2.es {
+    background: url(../images/question7-2-es.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-2.it {
+    background: url(../images/question7-2-it.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-2.de {
+    background: url(../images/question7-2-de.png) no-repeat;
+    background-size: 100% 100%;
+}
+.question7-2.fr {
+    background: url(../images/question7-2-fr.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Assistant</title>
+    <link rel="stylesheet" href="./style/common.css">
+    <style>
+        .log {
+            height: 120px;
+            background: url('./images/google_logo.png') no-repeat center 45px;
+            background-size: 184px 53px;
+        }
+    </style>
+</head>
+<body>
+    <div class="log"></div>
+    <div class="line20"></div>
+    <div class="content">
+        <div class="content-item">
+            <h4 id="title1"></h4>
+            <p id="title1-text"></p>
+        </div>
+        <div class="content-item">
+            <h4 id="title2"></h4>
+            <p id="title2-text"></p>
+        </div>
+        <div class="content-item">
+            <h4 id="title3"></h4>
+            <p id="title3-text"></p>
+        </div>
+        <div class="content-item">
+            <h4 id="title4"></h4>
+            <p id="title4-text"></p>
+        </div>
+        <div class="content-item">
+            <h4 id="title5"></h4>
+            <p id="title5-text"></p>
+            <p style="margin-top: 20px;" id="title5-example"></p>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    /*'zh-CN': 简体中文； 
+    ‘zh-TW’： 繁体中文； 
+    ‘en’: 英语； 
+    ‘es’: 西班牙语；
+    ‘it’: 意大利语；
+    ‘de’: 德文；
+    ‘fr’: 法语 */
+    var langJson = {
+        'zh-CN': {
+            'document-Text': 'Google Assistant',
+            'title1': '1. 添加设备',
+            'title1-text': '确保您的设备列表添加了支持Google Home的设备。',
+            'title2': '2. 修改设备名称',
+            'title2-text': '将设备修改成Google Home容易识别的名字，比如: bedroom light,kitchen plug。',
+            'title3': '3. 设置Google Home',
+            'title3-text': '用Home App设置Google Home。',
+            'title4': '4. 添加Home Control Action',
+            'title4-text': '在Home App，点击Home Control，添加设备并选择“Argrace”，在新窗口选择您App账号所在的地区，然后输入您的App账号密码；绑定成功后您的设备将出现在Home Control的device列表中。',
+            'title5': '5. 设置成功',
+            'title5-text': '然后您就可以通过Google Home来语音控制设备。',
+            'title5-example': `支持的语音指令举例: </br>
+                OK Google, turn on the light. </br>
+                Ok Google, set bedroom light to red. </br>
+                Ok Google, brighten bedroom light. </br>
+                Ok Google, turn off the plug.`,
+        },
+        'zh-TW': {
+            'document-Text': 'Google Assistant',
+            'title1': '1. 添加設備',
+            'title1-text': '確保您的設備列表添加了支持Google Home的設備。',
+            'title2': '2. 修改設備名稱',
+            'title2-text': '將設備修改成Googel Home容易識別的名字，比如: bedroomlight, kitchen plug。',
+            'title3': '3. 設置Google Home',
+            'title3-text': '使用Home app設置Google Home。',
+            'title4': '4. 添加Home Control Action',
+            'title4-text': '在Home app,點擊Home Control,添加設備並選擇“Argrace”，在新窗口選擇您app賬號所在的地區,然後輸入您的app賬號密碼;綁定成功後您的設備將出現在Home Control的device列表中。',
+            'title5': '5. 設置成功',
+            'title5-text': '然後您就可以通過Google Home來語音控制設備。',
+            'title5-example': `支持的語音指令舉例:</br>
+                OK Google, turn on the light. </br>
+                Ok Google, set bedroom light to red. </br>
+                Ok Google, brighten bedroom light. </br>
+                Ok Google, turn off the plug.`,
+        },
+        'en': {
+            'document-Text': 'Google Assistant',
+            'title1': '1. Add device',
+            'title1-text': 'Make sure your device list includes devices that support Google Home.',
+            'title2': '2. Change device name',
+            'title2-text': 'Change device name to a name that Googel Home can easily recognize, e.g.: bedroomlight, kitchen plug. ',
+            'title3': '3. Set up Google Home',
+            'title3-text': 'Use the Home app to set up Google Home. ',
+            'title4': '4. Add Home Control Action',
+            'title4-text': 'In the Home app, click Home Control, add device and select "Argrace". In the new window, select the region of your app account, and enter your app account password. If the bind is successful, your device will appear in the device list of Home Control. ',
+            'title5': '5. Setup succeeded',
+            'title5-text': 'You can now voice control the device via Google Home. ',
+            'title5-example': `Examples of supported voice commands: </br>
+                OK Google, turn on the light. </br>
+                Ok Google, set bedroom light to red. </br>
+                Ok Google, brighten bedroom light. </br>
+                Ok Google, turn off the plug.`,
+        },
+        'es': {
+            'document-Text': 'Google Assistant',
+            'title1': '1. Añada dispositivo',
+            'title1-text': 'Asegúrese de que los dispositivos compatibles con Google Home en su lista de dispositivos.  ',
+            'title2': '2. Modifique el nombre del dispositivo',
+            'title2-text': 'Cambia el dispositivo a un nombre que sea fácil de reconocer por Google Home, como: bedroomlight, kitchen plug.  ',
+            'title3': '3. Configure Google Home',
+            'title3-text': 'Utilice Home app para configurar Google Home.',
+            'title4': '4. Añada Home Control Action ',
+            'title4-text': 'En Home app, haga clic en Home Control, agregue el dispositivo y seleccione "Argrace ". En la nueva ventana, selecciona la región donde se encuentra la cuenta de app, a continuación, escribe la contraseña de la cuenta de app. Después de la vinculación correcta, el dispositivo aparecerá en la lista de device de Home Control.',
+            'title5': '5. Configuración completada',
+            'title5-text': 'A continuación, puede utilizar Google Home para controlar el dispositivo por voz. ',
+            'title5-example': `Ejemplos de comandos de voz soportados: </br>
+                OK Google, enciende las luces. </br>
+                Ok Google, cambia la luz de la habitación a rojo. </br>
+                Ok Google, dale más brillo a la luz de la habitación. </br>
+                Ok Google, apaga el enchufe.`,
+        },
+        'it': {
+            'document-Text': 'Google Assistant',
+            'title1': '1. Aggiungi dispositivo',
+            'title1-text': 'Assicurati che il tuo elenco di dispositivi includa dispositivi che supportano Google Home.',
+            'title2': '2. Modificare il nome del dispositivo',
+            'title2-text': 'Cambia il nome del dispositivo con un nome facilmente riconoscibile da Googel Home, ad esempio: luce da letto, presa da cucina.',
+            'title3': '3. Configura Google Home',
+            'title3-text': 'Utilizza l’app Home per configurare Google Home.',
+            'title4': '4. Aggiungi azione di controllo domestico',
+            'title4-text': 'Nell’app Home, fai clic su Home Control, aggiungi dispositivo e seleziona "" Argrace "". Nella nuova finestra, seleziona la regione del tuo account app e inserisci la password dell’account app. Se il collegamento ha esito positivo, il dispositivo verrà visualizzato nell’elenco dei dispositivi di Home Control.',
+            'title5': '5. Installazione riuscita',
+            'title5-text': 'Ora puoi controllare a voce il dispositivo tramite Google Home.',
+            'title5-example': `Esempi di comandi vocali supportati: </br>
+                Ok Google, accendi la luce. </br>
+                Ok Google, imposta la luce della camera da letto sul rosso. </br>
+                Ok Google, aumenta la luminosità della camera da letto.</br>
+                Ok Google, spegni la spina.`,
+        },
+        'de': {
+            'document-Text': 'Google Assistant',
+            'title1': '1. Gerät hinzufügen',
+            'title1-text': 'Stellen Sie sicher, dass Ihre Geräteliste Geräte enthält, die Google Home unterstützen.',
+            'title2': '2. Ändern Sie den Gerätenamen',
+            'title2-text': 'Ändern Sie das Gerät in einen Namen, der von Googel Home leicht erkannt wird, z. B.: Schlafzimmerlicht, Küchenstecker.',
+            'title3': '3. Richten Sie Google Home ein',
+            'title3-text': 'Verwenden Sie die Home-App, um Google Home einzurichten.',
+            'title4': '4. Fügen Sie die Home Control-Aktion hinzu',
+            'title4-text': 'Klicken Sie in der Home-App auf Home Control, fügen Sie ein Gerät hinzu und wählen Sie „Argrace“. Wählen Sie im neuen Fenster die Region aus, in der sich Ihr App-Konto befindet, und geben Sie dann das Kennwort Ihres App-Kontos ein. Nach erfolgreicher Bindung wird Ihr Gerät in der Home Control-Geräteliste angezeigt.',
+            'title5': '5. Erfolgreich eingerichtet',
+            'title5-text': 'Anschließend können Sie das Gerät über Google Home sprachgesteuert steuern.',
+            'title5-example': `Beispiele für unterstützte Sprachbefehle:</br>
+                OK Google, mach das Licht an. </br>
+                Ok Google, setze das Schlafzimmerlicht auf rot.</br>
+                Ok Google, erhelle das Schlafzimmerlicht.</br>
+                Ok Google, schalte den Stecker aus.`,
+        },
+        'fr': {
+            'document-Text': 'Google Assistant',
+            'title1': '1. Ajouter un appareil',
+            'title1-text': 'Assurez-vous que votre liste d’appareils comprend des appareils compatibles avec Google Home.',
+            'title2': '2. Modifiez le nom de l’appareil',
+            'title2-text': 'Remplacez l’appareil par un nom facilement reconnaissable par Googel Home, tel que: bedroomlight, kitchen plug',
+            'title3': '3. Configurer Google Home',
+            'title3-text': 'Utilisez l’application Home pour configurer Google Home.',
+            'title4': '4. Ajouter Home Control Action',
+            'title4-text': 'Dans l’application Home, cliquez sur Home Control, ajoutez un appareil et sélectionnez «Argrace», sélectionnez la région où se trouve votre compte d’application dans la nouvelle fenêtre, puis entrez le mot de passe de votre compte d’application; Une fois la liaison réussie, votre appareil apparaîtra dans la liste des appareils de Home Control',
+            'title5': '5. Configuration réussie',
+            'title5-text': 'Ensuite, vous pouvez contrôler vocalement l’appareil via Google Home.',
+            'title5-example': `Exemples de commandes vocales prises en charge: </br>
+                OK Google, allumez la lumière. </br>
+                Ok Google, règlez la lumière de la chambre au le rouge. </br>
+                Ok Google, éclairez la lumière de la chambre. </br>
+                Ok Google, éteignez la prise.`,
+        },
+    }
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+    var lang = getQueryString('lang') || 'en'
+    console.log(lang)
+    document.title = langJson[lang]['document-Text']
+    document.getElementById('title1').innerHTML = langJson[lang]['title1']
+    document.getElementById('title1-text').innerHTML = langJson[lang]['title1-text']
+    document.getElementById('title2').innerHTML = langJson[lang]['title2']
+    document.getElementById('title2-text').innerHTML = langJson[lang]['title2-text']
+    document.getElementById('title3').innerHTML = langJson[lang]['title3']
+    document.getElementById('title3-text').innerHTML = langJson[lang]['title3-text']
+    document.getElementById('title4').innerHTML = langJson[lang]['title4']
+    document.getElementById('title4-text').innerHTML = langJson[lang]['title4-text']
+    document.getElementById('title5').innerHTML = langJson[lang]['title5']
+    document.getElementById('title5-text').innerHTML = langJson[lang]['title5-text']
+    document.getElementById('title5-example').innerHTML = langJson[lang]['title5-example']
+</script>

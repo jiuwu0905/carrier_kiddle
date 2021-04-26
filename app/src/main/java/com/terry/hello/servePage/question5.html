@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品指南</title>
+    <link rel="stylesheet" href="./style/common.css">
+    <style>
+        html, body {
+            background: #F7F7F7;
+        }
+        .tip {
+            color: #2D2D2D;
+            font-size: 16px;
+            font-weight:400;
+            margin-bottom: 10px;
+        }
+        .box {
+            padding: 0 20px;
+        }
+        p {
+            color: #737373;
+            font-size: 14px;
+            font-weight:400;
+            line-height: 21px;
+        }
+        .else {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <div class="left-line"></div>
+        <div class="title-text" id="title">如何将设备设置为配网状态？</div>
+        <div class="right-line"></div>
+    </div>
+    <div class="box">
+        <p class="tip" id="tip"></p>
+        <p id="content"></p>
+        <p class="else" id="else"></p>
+    </div>
+</body>
+</html>
+<script>
+    var langJson = {
+        'zh-CN': {
+            'document-Text': '产品指南',
+            'title': '如何将设备设置为配网状态？',
+            'tip': '设备的配网方式一般有两种，快闪模(Airkiss）和慢闪模式（AP）',
+            'content': `设备配网方法（重置方法）：</br>
+                        &emsp;&emsp;1）设备第一次通电后自动进入快闪状态，有指示灯的设备，指示灯会快闪；无指示灯的设备如灯泡，会自身快闪；如有问题可以进入添加设备页面，点击“如何将设备指示灯设置为快闪”进入查看详情。</br>
+                        &emsp;&emsp;2）如果像插座等有开关按键但是没复位键的产品的话一般长按开关5秒，看到指示灯快闪即可；</br>
+                        &emsp;&emsp;3）如果是灯之类自己没有开关的话，连接到灯座上，操作灯座开关“开/关” 4次，并停留到开灯状态，看到灯快闪即可；</br>
+                        &emsp;&emsp;4）如果是有复位键的产品，一般就是按复位键就可以，看到指示灯快闪即可。 （注：联网支持2.4G的网络，暂不支持5G网络)。`,
+            'else': '具体的您可以查看设备说明书。'
+        },
+        'zh-TW': {
+            'document-Text': '產品指南',
+            'title': '如何將設備設置為配網狀態？',
+            'tip': '設備的配網方式一般有兩種，快閃模式（Airkiss）和慢閃模式（AP）',
+            'content': `設備配網方法（重置方法）：</br>
+                        &emsp;&emsp;1）設備第一次通電後自動進入快閃狀態，有指示燈的設備，指示燈會快閃；無指示燈的設備如燈泡，會自身快閃；如有問題可以進入添加設備頁面，點擊“如何將設備指示燈設置為快閃”進入查看詳情。</br>
+                        &emsp;&emsp;2）如果像插座等有開關按鍵但是沒復位鍵的產品的話一般長按開關5秒，看到指示燈快閃即可；</br>
+                        &emsp;&emsp;3）如果是燈之類自己沒有開關的話，連接到燈座上，操作燈座開關“開/關” 4次，並停留到開燈狀態，看到燈快閃即可；</br>
+                        &emsp;&emsp;4）如果是有復位鍵的產品，一般就是按復位鍵就可以，看到指示燈快閃即可。 （注：聯網支持2.4G的網絡，暫不支持5G網絡）`,
+            'else': '具體的您可以查看設備說明書。'
+        },
+        'en': {
+            'document-Text': 'Product Guide',
+            'title': 'How to set up the Wi-Fi network configuration?',
+            'tip': 'Normally, there are two methods to set the Wi-Fi network: Smart config mode and AP mode.',
+            'content': `Device network distribution method：</br>
+                        &emsp;&emsp;1）The device will enter smart config mode at the first time start up. The indicator led (or device) will blink (rapidly or slowly).</br>
+                        &emsp;&emsp;2）If the device has an On-Off button, but no Reset button, please press and hold the button in device for 5S to switch mode into smart config, and the indicator led will blink rapidly.</br>
+                        &emsp;&emsp;3）If the device has no switch control button, such as a light, please connect it to a light socket and operate “On/Off” for 3 times, keep the light is on, and the indicator led blinks rapidly.</br>
+                        &emsp;&emsp;4）If the device has Reset button, generally you can just press it until the indicator led blinks rapidly. （Note: Only support 2.4G Wi-fi network, 5G network is temporarily unavailable.）`,
+            'else': 'Please see the device manual for details.'
+        },
+        'es': {
+            'document-Text': 'Guía del producto',
+            'title': '¿Cómo establecer el dispositivo en el estado de la red de emparejamiento?',
+            'tip': 'Generalmente hay dos modos de emparejamiento de dispositivos, el modo de parpadeo rápido (Airkiss) y el modo de parpadeo lento (AP) ',
+            'content': `Método de red de emparejamiento de dispositivos (método de restablecimiento): </br>
+                        &emsp;&emsp;1) Después del primer encendido, el dispositivo entrará automáticamente en el estado de parpadeo rápido. Para el dispositivo con luz indicadora, la cual parpadeará rápidamente; para el dispositivo sin luz indicadora, como una bombilla, parpadeará por sí misma. Si hay un problema, puede entrar en la página de añadir dispositivo y hacer clic en "Cómo configurar la luz indicadora del dispositivo para que parpadee rápidamente " para ver los detalles.</br>
+                        &emsp;&emsp;2) Si los productos, tal como tomacorriente, tienen un botón de interruptor, pero no botón de reinicio, generalmente, mantenga presionado el interruptor durante 5 segundos, y la luz indicadora parpadeará rápidamente; </br>
+                        &emsp;&emsp;3) Si la lámpara no tiene interruptor, conéctela al soporte de la lámpara, accione el interruptor del soporte de la lámpara "encendido / apagado" 4 veces, y permanezca en estado de encendido, y la luz indicadora parpadeará rápidamente; </br>
+                        &emsp;&emsp;4) Si se trata de un producto con un botón de reinicio, generalmente sólo presiona el botón de reinicio, y la luz indicadora parpadeará rápidamente. (Nota: la red es compatible con la red 2,4G, no es compatible con la red 5G en la actualidad) `,
+            'else': 'Puede consultar el manual del dispositivo para obtener más información.'
+        },
+        'it': {
+            'document-Text': 'Guida ai prodotti',
+            'title': 'Come impostare la configurazione della rete Wi-Fi?',
+            'tip': 'Normalmente, ci sono due metodi per impostare la rete Wi-Fi: modalità di configurazione intelligente e modalità AP.',
+            'content': `Metodo di distribuzione in rete del dispositivo ：</br>
+                        &emsp;&emsp;1） Il dispositivo entrerà in modalità di configurazione intelligente al primo avvio. Il led (o dispositivo) lampeggerà (velocemente o lentamente).</br>
+                        &emsp;&emsp;2） Se il dispositivo dispone di un pulsante On-Off, ma non di un pulsante di ripristino, premere e tenere premuto il pulsante nel dispositivo per 5S per passare dalla modalità a smart config, e l'indicatore LED lampeggerà rapidamente.</br>
+                        &emsp;&emsp;3） Se il dispositivo non ha un pulsante di controllo dell'interruttore, come una luce, collegarlo a una presa della luce e azionare "On / Off" per 3 volte, tenere la luce accesa e il LED indicatore lampeggia rapidamente.</br>
+                        &emsp;&emsp;4） Se il dispositivo ha il pulsante di ripristino, in genere è sufficiente premerlo fino a quando il led indicatore lampeggia rapidamente. （Nota: supporta solo la rete Wi-Fi 2.4G, la rete 5G è temporaneamente non disponibile.）`,
+            'else': 'Si prega di consultare il manuale del dispositivo per i dettagli. '
+        },
+        'de': {
+            'document-Text': 'Produkthilfe',
+            'title': 'Wie richte ich die Wi-Fi-Netzwerkkonfiguration ein?',
+            'tip': 'Normalerweise gibt es zwei Methoden, um das Wi-Fi-Netzwerk einzustellen: Smart Config-Modus und AP-Modus.',
+            'content': `Gerätenetzwerkverteilungsmethode:</br>
+                        &emsp;&emsp;1） Das Gerät wechselt beim ersten Start in den Smart Config-Modus. Die LED (oder das Gerät) der Anzeige blinkt (schnell oder langsam).</br>
+                        &emsp;&emsp;2） Wenn das Gerät über eine Ein-Aus-Taste, aber keine Reset-Taste verfügt, halten Sie die Taste für 5S gedrückt, damit in den Modus für intelligente Konfiguration wechselt. Die LED-Anzeige blinkt schnell.</br>
+                        &emsp;&emsp;3） Wenn das Gerät keine Schaltersteuertaste hat, z. B. eine Leuchte, schließen Sie es an eine Lampenfassung an und betätigen Sie mit dreimal „Ein / Aus“. Lassen Sie die Leuchte eingeschaltet und die LED der Anzeige blinkt schnell.</br>
+                        &emsp;&emsp;4） Wenn das Gerät über eine Reset-Taste verfügt, können Sie diese im Allgemeinen einfach drücken, bis die LED-Anzeige schnell blinkt. （Hinweis: Unterstützt nur 2.4G Wi-Fi-Netzwerk, 5G-Netzwerk ist vorübergehend nicht unterstützt.）`,
+            'else': 'Weitere Informationen finden Sie im Gerätehandbuch.'
+        },
+        'fr': {
+            'document-Text': 'Guide de produit',
+            'title': 'Comment mettre l’appareil en état de distribution réseau?',
+            'tip': 'Il existe généralement deux façons de configurer le réseau pour les appareils, le mode flash  (Airkiss) et le mode flash lent (AP)',
+            'content': `Méthode de distribution du réseau d'équipement (méthode de réinitialisation):</br>
+                        &emsp;&emsp;1) L'appareil entrera automatiquement en état du mode flash après la première mise sous tension. L'appareil avec voyant lumineux clignotera rapidement; l'appareil sans voyant lumineux, tel qu'une ampoule, clignotera rapidement par lui-même; s'il y a un problème, vous pouvez accéder à la page d'ajout de appareil et cliquer sur "Comment faire Réglez l'indicateur de l'appareil pour qu'il clignote rapidement "pour entrer les détails de l'affichage.</br>
+                        &emsp;&emsp;2) Si le produit a un bouton interrupteur mais pas de bouton de réinitialisation, tel qu'une prise, appuyez généralement sur l'interrupteur pendant 5 secondes et voyez le voyant clignoter rapidement;</br>
+                        &emsp;&emsp;3) S'il s'agit d'une lampe sans son propre interrupteur, connectez-la au support de lampe, activez l'interrupteur du support de lampe "marche / arrêt" 4 fois et restez à l'état allumé, et vous pouvez voir la lumière clignoter rapidement;</br>
+                        &emsp;&emsp;4) S'il s'agit d'un produit avec un bouton de réinitialisation, il suffit généralement d'appuyer sur le bouton de réinitialisation et de voir que le voyant clignote rapidement. (Remarque: le réseau prend en charge les réseaux 2.4G, mais les réseaux 5G ne sont actuellement pas pris en charge)`,
+            'else': 'Pour plus de détails, vous pouvez consulter le manuel de l’appareil.'
+        },
+    }
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+    var lang = getQueryString('lang') || 'zh-CN'
+    console.log(lang)
+    document.title = langJson[lang]['document-Text']
+    document.getElementById('title').innerHTML = langJson[lang]['title']
+    document.getElementById('tip').innerHTML = langJson[lang]['tip']
+    document.getElementById('content').innerHTML = langJson[lang]['content']
+    document.getElementById('else').innerHTML = langJson[lang]['else']
+</script>

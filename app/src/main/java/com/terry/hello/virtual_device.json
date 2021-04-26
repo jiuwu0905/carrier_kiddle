@@ -1,0 +1,14 @@
+[{
+	"deviceId": "17",
+	"productKey": "a1MALoeG7IP",
+	"picUrl": "http://device-open.oss-cn-shanghai.aliyuncs.com/index/top/%E6%8F%92%E5%BA%A7.png",
+	"name": "插座",
+	"en_name": "Socket",
+	"onlineState": 1,
+	"roomName":"餐厅",
+	"properties": {
+		"SwitchMultiple": {
+			"value": "1"
+		}
+	}
+}]
