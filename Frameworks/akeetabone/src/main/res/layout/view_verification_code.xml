@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/ll_codes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CheckedTextView
+            android:id="@+id/ctv_number_1"
+            style="@style/VerificationTextViewStyle" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <CheckedTextView
+            android:id="@+id/ctv_number_2"
+            style="@style/VerificationTextViewStyle" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <CheckedTextView
+            android:id="@+id/ctv_number_3"
+            style="@style/VerificationTextViewStyle" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <CheckedTextView
+            android:id="@+id/ctv_number_4"
+            style="@style/VerificationTextViewStyle" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <CheckedTextView
+            android:id="@+id/ctv_number_5"
+            style="@style/VerificationTextViewStyle" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <CheckedTextView
+            android:id="@+id/ctv_number_6"
+            style="@style/VerificationTextViewStyle" />
+
+    </LinearLayout>
+
+    <ai.argrace.app.akeetabone.widget.VerificationCodeEditText
+        android:id="@+id/vce_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@id/ll_codes"
+        android:layout_alignBottom="@id/ll_codes"
+        android:background="@android:color/transparent"
+        android:textColor="@android:color/transparent"
+        android:longClickable="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:cursorVisible="false"
+        android:maxLength="6"
+        android:inputType="number" />
+
+</RelativeLayout>

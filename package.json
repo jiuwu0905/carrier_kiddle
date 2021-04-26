@@ -1,0 +1,61 @@
+{
+  "name": "akeeta-android-rnlibs",
+  "version": "1.0.0",
+  "private": true,
+  "author": "Terry",
+  "license": "",
+  "description": "this is the whitesource Demo",
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "build-ios": "react-native bundle --platform ios --entry-file ./modules/SmartPlug/index.js --bundle-output ./dist/ios/main.jsbundle --assets-dest ./dist/ios --dev false",
+    "build-android": "react-native bundle --platform android --entry-file ./modules/SmartPlug/index.js --bundle-output ./dist/android/index.android.bundle --assets-dest ./dist/android --dev false"
+  },
+  "dependencies": {
+    "@react-native-community/hooks": "2.6.0",
+    "@react-native-community/masked-view": "0.1.10",
+    "@react-native-community/netinfo": "^5.9.6",
+    "@react-navigation/native": "5.7.1",
+    "@react-navigation/stack": "5.7.1",
+    "beeshell": "2.0.11",
+    "i18n-js": "3.7.1",
+    "immer": "7.0.7",
+    "lottie-react-native": "3.3.2",
+    "moment": "2.27.0",
+    "react": "16.13.1",
+    "react-native": "0.61.5",
+    "react-native-gesture-handler": "1.6.1",
+    "react-native-linear-gradient": "2.5.6",
+    "react-native-reanimated": "1.9.0",
+    "react-native-safe-area-context": "3.1.1",
+    "react-native-screens": "2.9.0",
+    "react-native-svg": "12.0.3",
+    "react-native-vector-icons": "6.6.0",
+    "react-native-webview": "^11.0.2",
+    "use-immer": "0.4.1",
+
+
+
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/runtime": "^7.10.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "babel-jest": "^26.1.0",
+    "babel-plugin-root-import": "^6.5.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "eslint": "^7.4.0",
+    "jest": "^26.1.0",
+    "metro-react-native-babel-preset": "^0.60.0",
+    "react-test-renderer": "16.13.1",
+
+
+
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

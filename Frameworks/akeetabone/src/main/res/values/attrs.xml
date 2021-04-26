@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="StickyLayout">
+        <attr name="header" format="reference" />
+        <attr name="headerActivated" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ClearableEditText">
+        <attr name="icon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="PasswordEditText">
+        <attr name="iconPwdHidden" format="reference" />
+        <attr name="iconPwdVisible" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="CustomIconEditText">
+        <attr name="custom_icon" format="reference" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,6 @@
+projectKey=Android
+serverUrl=http://192.168.2.13:9100
+serverVersion=8.6.0.39681
+dashboardUrl=http://192.168.2.13:9100/dashboard?id=Android
+ceTaskId=AXdnEnk6q9f1oz_6v1V4
+ceTaskUrl=http://192.168.2.13:9100/api/ce/task?id=AXdnEnk6q9f1oz_6v1V4
